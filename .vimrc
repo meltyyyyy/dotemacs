@@ -14,7 +14,9 @@ Bundle 'gmarik/vundle'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'kevinw/pyflakes-vim'
+Bundle 'Flake8-vim'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'thinca/vim-quickrun'
@@ -27,6 +29,18 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " show file tree
 map <F2> :NERDTreeToggle<CR>
+
+"------------------------------------
+" pyflakes
+"------------------------------------
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+let g:PyFlakeDefaultComplexity=10
+
+"------------------------------------
+" syntastic
+"------------------------------------
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 "------------------------------------
 " neocomplete.vim & jedi.vim
@@ -85,7 +99,10 @@ set number
 set encoding=utf-8
 set laststatus=2
 set autoindent
+syntax on
+set background=light
 set shiftwidth=4
 if has("mouse") " Enable the use of the mouse in all modes
   set mouse=a
 endif
+

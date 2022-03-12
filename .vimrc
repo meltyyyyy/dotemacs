@@ -22,6 +22,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ivanov/vim-ipython'
+Bundle 'neomake/neomake'
 
 " let vim run execute file
 nnoremap <F11> :QuickRun<CR>
@@ -29,6 +30,15 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " show file tree
 map <F2> :NERDTreeToggle<CR>
+
+"------------------------------------
+" neomake
+"------------------------------------
+call neomake#config#set('ft.python.pylama.exe', 'pylava')
+call neomake#configure#automake('nrwi', 100)
+let g:neomake_open_list = 2
+map <C-n> :lnext<CR>
+map <C-m> :lprev<CR>
 
 "------------------------------------
 " pyflakes

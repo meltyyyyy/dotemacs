@@ -23,6 +23,7 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ivanov/vim-ipython'
 Bundle 'neomake/neomake'
+Bundle 'Chiel92/vim-autoformat'
 
 " let vim run execute file
 nnoremap <F11> :QuickRun<CR>
@@ -30,6 +31,13 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " show file tree
 map <F2> :NERDTreeToggle<CR>
+
+"------------------------------------
+" autoformat
+"------------------------------------
+" this following line depends on the environment
+let g:python3_host_prog='/home/takeru.abe/anaconda3/bin/pyvim'
+noremap <F3> :Autoformat<CR>
 
 "------------------------------------
 " neomake

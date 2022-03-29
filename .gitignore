@@ -6,5 +6,6 @@
 !init.el
 !.vimrc
 !.latexmkrc
-!.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
 .kaggle.conf

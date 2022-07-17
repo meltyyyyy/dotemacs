@@ -11,27 +11,29 @@
         "editor.tabSize": 4
     },
     "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.defaultInterpreterPath": "/home/takeru.abe/anaconda3/envs/handm/bin/python",
+    "python.defaultInterpreterPath": "/home/abe/anaconda3/envs/qiita/bin/python",
     "terminal.integrated.env.linux": {"PYTHONPATH": "${workspaceFolder}"},
-    "python.venvPath": "/home/takeru.abe/anaconda3/envs/handm",
-    "python.condaPath": "/home/takeru.abe/anaconda3/condabin/conda",
+    "python.venvPath": "/home/abe/anaconda3/envs/qiita",
+    "python.condaPath": "/home/abe/anaconda3/condabin/conda",
     "python.linting.pylintEnabled": false,
     "python.linting.mypyEnabled": true,
-    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleEnabled": false,
     "python.linting.pycodestyleArgs": [
-        "--max-line-length=150",
-        "--ignore=E402"
+        "--max-line-length=200",
+        "--ignore=E402, E401",
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--max-line-length=150",
+        "--max-line-length=200",
         "--max-complexity","20",
-        "--ignore=E402"
+        "--ignore=E402, E401, F401",
     ],
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Args": [
         "--aggressive",
         "--aggressive",
+        "--max-line-length=200",
+        "--ignore=E402, E401",
     ],
     "autoDocstring.docstringFormat": "google",
     "python.testing.unittestArgs": [
